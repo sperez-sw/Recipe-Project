@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button (click)="addNewRecipe()" class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <app-recipe-item *ngFor="let recipeEl of recipes; let i = index" [index]="i" [recipe]="recipeEl" ></app-recipe-item>
+
+         <!-- [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
+        fragment="loading" -->
+
+        <!-- [recipe]="recipeEl" -->
+    </div>
+</div>
+
