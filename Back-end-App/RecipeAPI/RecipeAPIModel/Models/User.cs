@@ -1,8 +1,7 @@
 ﻿using System;
 
-public class Class1
+public class User
 {
-	public Class1()
-	{
-	}
+	public string mail { get; set; }
+	public string password { get; set; }
 }

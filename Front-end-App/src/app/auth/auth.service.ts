@@ -4,13 +4,15 @@ import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 export interface AuthResponseData{
-  kind:string;
-  idToken: string;
-  email: string;
-  refreshToken: string;
-  expiresIn: string;
-  localId: string;
-  registered?: boolean;
+  token:string;
+  expiration:Date;
+  // kind:string;
+  // idToken: string;
+  // email: string;
+  // refreshToken: string;
+  // expiresIn: string;
+  // localId: string;
+  // registered?: boolean;
 }
 
 @Injectable({
@@ -19,11 +21,11 @@ export interface AuthResponseData{
 export class AuthService {
 
   constructor(private http : HttpClient) { }
-
+  //'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDoZdryCEue7Cgmb7qJ9mOvsMnATXbItJc'
   signUp(email:string, password:string){
     //colocar la apikey del proyecto de firebase
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDoZdryCEue7Cgmb7qJ9mOvsMnATXbItJc',
+      'https://localhost:44352/api/auth',
       {
         email: email,
         password: password,
@@ -52,6 +54,7 @@ signIn(email:string, password:string){
       returnSecureToken: true
     }
   ).pipe(catchError(errorResp =>{
+    console.log(errorResp);
     let errorMessage = 'An unknown error ocurred!'
     if(!errorResp.error || !errorResp.error.error){
       return throwError(errorMessage)

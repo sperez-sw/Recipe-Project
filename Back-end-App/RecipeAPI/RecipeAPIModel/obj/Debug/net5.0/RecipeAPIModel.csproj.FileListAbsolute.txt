@@ -10,3 +10,15 @@ D:\sperez\Documents\Projects\CShap\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\Rec
 D:\sperez\Documents\Projects\CShap\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.dll
 D:\sperez\Documents\Projects\CShap\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\ref\RecipeAPIModel.dll
 D:\sperez\Documents\Projects\CShap\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.pdb
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\bin\Debug\net5.0\RecipeAPIModel.deps.json
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\bin\Debug\net5.0\RecipeAPIModel.dll
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\bin\Debug\net5.0\ref\RecipeAPIModel.dll
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\bin\Debug\net5.0\RecipeAPIModel.pdb
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.csproj.AssemblyReference.cache
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.AssemblyInfoInputs.cache
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.AssemblyInfo.cs
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.csproj.CoreCompileInputs.cache
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.dll
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\ref\RecipeAPIModel.dll
+D:\sperez\Documents\Projects\FullStack\Recipe-Project\Back-end-App\RecipeAPI\RecipeAPIModel\obj\Debug\net5.0\RecipeAPIModel.pdb

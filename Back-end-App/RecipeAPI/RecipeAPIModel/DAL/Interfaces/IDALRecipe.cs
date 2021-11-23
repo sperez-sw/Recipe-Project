@@ -17,7 +17,5 @@ namespace RecipeAPIModel.DAL
         Task<bool> UpdateRecipe(Recipe recipe);
 
         Task<bool> DeleteRecipe(int id);
-
-
     }
 }
