@@ -25,7 +25,7 @@ export class AuthService {
   signUp(email:string, password:string){
     //colocar la apikey del proyecto de firebase
     return this.http.post<AuthResponseData>(
-      'https://localhost:44352/api/auth',
+      'https://localhost:44352/api/auth/register',
       {
         email: email,
         password: password,
@@ -46,8 +46,10 @@ export class AuthService {
   }
 
 signIn(email:string, password:string){
+  //'https://localhost:44352/api/auth/register'
+  //'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDoZdryCEue7Cgmb7qJ9mOvsMnATXbItJc'
   return this.http.post<AuthResponseData>(
-    'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDoZdryCEue7Cgmb7qJ9mOvsMnATXbItJc',
+    'https://localhost:44352/api/auth/login',
     {
       email: email,
       password: password,

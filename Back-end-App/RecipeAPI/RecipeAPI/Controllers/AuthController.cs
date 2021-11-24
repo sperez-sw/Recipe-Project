@@ -26,17 +26,46 @@ namespace RecipeAPI.Controllers
             _user = user;
         }
 
-        [HttpPost]
+        [HttpPost, Route("register")]
         public async Task<IActionResult> SignUp([FromBody] LoginModel model)
         {
+            if (!ModelState.IsValid || model == null || (model.email == null || model.password == null))
+            {
+                return BadRequest(ModelState);
+            }
+
             var user = new User();
             user.mail = model.email;
             user.password = model.password;
+
             await _user.InsertUser(user);
-            return Ok();
+
+            //var created = 
+            var authClaims = new[]
+                {
+                     new Claim(JwtRegisteredClaimNames.Sub, model.email),
+                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                };
+
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("RecipeAPISigningCredentials"));
+
+            var token = new JwtSecurityToken(
+                issuer: "RecipeAPI",
+                audience: "http://localhost:4200/",
+                expires: DateTime.Now.AddDays(1),
+                claims: authClaims,
+                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+                );
+            return Ok(new
+            {
+                token = new JwtSecurityTokenHandler().WriteToken(token),
+                expiration = token.ValidTo
+            });
+
+            //return Created("created", created);
         }
 
-            [HttpPost]
+        [HttpPost, Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
             if (!ModelState.IsValid)
@@ -45,8 +74,6 @@ namespace RecipeAPI.Controllers
             }
 
             //Revisar usuario
-            //var user = await _userManager.FindByNameAsync(model.email);
-            //if (user != null && await _userManager.CheckPasswordAsync(user, model.password))
             var user = await _user.GetUser(model.email);
 
             if (model != null && user != null && (model.password == user.password))

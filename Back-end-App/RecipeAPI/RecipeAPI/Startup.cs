@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using PruebaAPI.Model;
 using RecipeAPIModel.DAL;
 using RecipeAPIModel.DAL.Implementations;
+using RecipeAPIModel.DAL.Interfaces;
 using System;
 using System.Text;
 
@@ -29,6 +30,7 @@ namespace RecipeAPI
             var mySQLConnectionConfig = new MySQLConfiguration(Configuration.GetConnectionString("MySqlConnection"));
             services.AddSingleton(mySQLConnectionConfig);
             services.AddScoped<IDALRecipe, DALRecipe>();
+            services.AddScoped<IDALUser, DALUser>();
             services.AddControllers();
             services.AddCors(options => options.AddDefaultPolicy(builder => builder.WithOrigins("http://localhost:44352").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 

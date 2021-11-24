@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RecipeAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/recipes")]
     [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class RecipesController : ControllerBase

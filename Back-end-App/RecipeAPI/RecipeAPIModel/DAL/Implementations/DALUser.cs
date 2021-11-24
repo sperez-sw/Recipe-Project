@@ -35,7 +35,10 @@ namespace RecipeAPIModel.DAL.Implementations
             var db = dbConnection();
             var sql = @"SELECT mail, password FROM users WHERE mail = @Mail";
             var user = await db.QueryFirstOrDefaultAsync<User>(sql, new { Mail = mail});
-            user.password = GlobalMethods.ConvertToDecrypt(user.password);
+            if (user != null)
+            {
+                user.password = GlobalMethods.ConvertToDecrypt(user.password);
+            }
             return user;
         }
     }
